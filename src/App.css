@@ -1,0 +1,280 @@
+:root {
+    --primary-color: #212121;
+    --background-color: #222;
+    --secondary-color: #2780e4;
+    --text-color: #afafaf;
+}
+
+.roboto-400 {
+ font-family: "Roboto", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 400;
+ font-style: normal;
+ font-variation-settings: "wdth" 100;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* TimeLine */
+
+/* Timeline Container */
+.timeline {
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card container */
+.card-custom {
+    position: relative;
+}
+
+.card-custom:hover {
+    cursor: pointer !important;
+}
+
+/* setting padding based on even or odd */
+.card-custom:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+}
+.card-custom:nth-child(even) {
+    padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.card-custom::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid var(--secondary-color);
+}
+
+/* Setting the border of top, bottom, left */
+.card-custom:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+    .card-custom:nth-child(odd)::before {
+        top: -5px;
+        bottom: -5px;
+    }
+}
+
+/* Setting the border of top, bottom, right */
+.card-custom:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card-custom:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card-custom:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card-custom:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info-project {
+    display: flex;
+    flex-direction: column;
+    background: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Title of the card */
+.title-project {
+    color: var(--secondary-color);
+    position: relative;
+}
+
+/* Timeline dot  */
+.title-project::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid var(--secondary-color);
+}
+
+/* text right if the card is even  */
+.card-custom:nth-child(even) > .info-project > .title-project {
+    text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card-custom:nth-child(odd) > .info-project > .title-project::before {
+    left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card-custom:nth-child(even) > .info-project > .title-project::before {
+    right: -45px;
+}
+
+.image-project{
+    width: 90%;
+    margin: 5%;
+}
+
+.modal-content {
+    background-color: var(--background-color) !important;
+}
+
+.modal-content{
+    background-color: #1a1a1a  !important;
+}
+
+.modal-header{
+    border-bottom: 1px solid #4b4c4c !important;
+}
+
+.modal-footer{
+    border-top: 1px solid #4b4c4c !important;
+}
+
+.modal-header .btn-close {
+    color: #4b4c4c !important;
+}
+
+.test {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    font-weight: bold;
+    z-index: 1;
+    background: white;
+}
+
+/* Nav Bar */
+
+.NavBarHomePage {
+    background: #61a8ff;
+    background: linear-gradient(90deg,rgba(97, 168, 255, 1) 0%, rgba(138, 190, 255, 1) 35%, rgba(171, 210, 255, 1) 100%);
+}
+
+/* Home Page */
+
+.VideoHomeScreen{
+  width: 100%;
+  height: 100%;
+}
+
+.TitleHomeScreen{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* A Porpos de moi */
+.title-propos{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: bold;
+}
+
+.text-propos{
+    display: flex;
+    flex-wrap:  wrap;
+    justify-content: center;
+    align-items: center;
+    font-size:  1.2em;
+}
+
+.image-propos{
+    width: 75%;
+}
+
+/* Compétences */
+
+.text-competences {
+    font-size:  1.5em;
+    font-weight: bold;
+}
+
+.title-competences {
+    font-size:  2em;
+    font-weight: bold;
+}
+
+.competences-container {
+    padding-top: 2em;
+}
+
+.competences-title-container {
+    padding-top: 5em;
+}
+
+.image-competences{
+    width: 25%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.col-competences {
+    display:  flex;
+}
