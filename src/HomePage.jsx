@@ -7,6 +7,7 @@ function HomePage() {
   return (
     <>
         <video
+            id="Home"
             src={HomeScreenVideo}
             autoPlay
             muted

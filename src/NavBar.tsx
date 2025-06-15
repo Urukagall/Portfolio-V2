@@ -10,22 +10,15 @@ function NavBar() {
 
     return (
         <>
-            <Navbar expand="lg" className="NavBarHomePage bg-body-tertiary" sticky="top" >
+            <Navbar expand="lg" className="NavBarHomePage" fixed="top" >
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <img
-                            alt=""
-                            src={reactLogo}
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                        />{' '}
-                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
+                        <Nav className="me-auto text-color">
+                            <Nav.Link href="#Home">Accueil</Nav.Link>
+                            <Nav.Link href="#about">A Propos</Nav.Link>
+                            <Nav.Link href="#competences">Compétences</Nav.Link>
+                            <Nav.Link href="#projet">Projet</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

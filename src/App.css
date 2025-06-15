@@ -1,8 +1,14 @@
 :root {
     --primary-color: #212121;
-    --background-color: #222;
+    --background-color: #191919;
+    --background-color-card: #212529;
     --secondary-color: #2780e4;
-    --text-color: #afafaf;
+    --text-color: #999999;
+    --title-color: #eaeaea;
+}
+
+body {
+    background-color: var(--background-color) !important;
 }
 
 .roboto-400 {
@@ -48,6 +54,22 @@
 .read-the-docs {
   color: #888;
 }
+
+.text-color {
+  color: var(--text-color);
+}
+
+.title-color {
+  color: var(--title-color);
+}
+
+.padding-part {
+    padding-top: 250px;
+}
+
+/* Background */
+
+
 
 /* TimeLine */
 
@@ -131,10 +153,13 @@
 .info-project {
     display: flex;
     flex-direction: column;
-    background: var(--background-color);
+    background: var(--background-color-card);
     color: var(--text-color);
     border-radius: 10px;
     padding: 10px;
+    border-color: #333;
+    border-style: solid;
+    border-width: 1px;
 }
 
 /* Title of the card */
@@ -175,7 +200,7 @@
 }
 
 .modal-content {
-    background-color: var(--background-color) !important;
+    background-color: var(--background-color-card) !important;
 }
 
 .modal-content{
@@ -194,21 +219,27 @@
     color: #4b4c4c !important;
 }
 
-.test {
+.date-timeline {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.5em;
     font-weight: bold;
     z-index: 1;
-    background: white;
+    background: var(--background-color);
+    color: var(--text-color);
 }
 
 /* Nav Bar */
 
+.nav-link {
+    color: var(--title-color) !important;
+    font-size:  1.2em !important;
+    padding-right:  60px !important;
+}
+
 .NavBarHomePage {
-    background: #61a8ff;
-    background: linear-gradient(90deg,rgba(97, 168, 255, 1) 0%, rgba(138, 190, 255, 1) 35%, rgba(171, 210, 255, 1) 100%);
+    background: transparent;
 }
 
 /* Home Page */
@@ -232,7 +263,6 @@
 
 /* A Porpos de moi */
 .title-propos{
-    padding-top: 50px;
     padding-bottom: 50px;
     font-weight: bold;
 }
@@ -265,10 +295,6 @@
     padding-top: 2em;
 }
 
-.competences-title-container {
-    padding-top: 5em;
-}
-
 .image-competences{
     width: 25%;
     padding-left: 1rem;
@@ -277,4 +303,24 @@
 
 .col-competences {
     display:  flex;
+}
+
+/* Footer */
+.footer-custom {
+    background-color: #181818 !important;
+    color: #eaeaea !important;
+    border-top: 1px solid #333;
+    position: relative;
+    width: 100%;
+}
+
+.footer-link {
+    color: #eaeaea !important;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: none;
 }

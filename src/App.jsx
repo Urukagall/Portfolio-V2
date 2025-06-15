@@ -7,6 +7,7 @@ import HomePage from "./HomePage.jsx";
 import AProposDeMoi from "./AProposDeMoi.jsx";
 import Competences from "./Competences.jsx";
 import Project from "./Project.jsx";
+import Footer from "./Footer.jsx";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <AProposDeMoi/>
           <Competences/>
           <Project/>
+          <Footer/>
 
 
           {/*<div>

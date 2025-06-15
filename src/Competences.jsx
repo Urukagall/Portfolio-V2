@@ -19,14 +19,14 @@ function Competences() {
 
   return (
     <>
-        <div className="d-flex justify-content-center align-items-center flex-column competences-title-container">
-            <p className="roboto-400 title-competences">Compétences</p>
+        <div id="competences" className="d-flex justify-content-center align-items-center flex-column padding-part">
+            <p className="roboto-400 title-competences title-color">Compétences</p>
         </div>
         <Container className="competences-container">
             <Row className="justify-content-center">
                 <Col md={4} className="justify-content-center align-items-center d-flex">
                     <div className="d-flex flex-column align-items-center">
-                        <p className="text-competences roboto-400">Moteurs</p>
+                        <p className="text-competences roboto-400 title-color">Moteurs</p>
                         <div className="d-flex justify-content-center">
                             <Image src={Unity} className="image-competences"/>
                             <Image src={Unreal} className="image-competences"/>
@@ -35,7 +35,7 @@ function Competences() {
                 </Col>
                 <Col md={4} className="justify-content-center align-items-center d-flex">
                     <div className="d-flex flex-column align-items-center">
-                        <p className="text-competences roboto-400">Languages Principales</p>
+                        <p className="text-competences roboto-400 title-color">Languages Principales</p>
                         <div className="d-flex justify-content-center">
                             <Image src={CS} className="image-competences"/>
                             <Image src={CPP} className="image-competences"/>
@@ -44,7 +44,7 @@ function Competences() {
                 </Col>
                 <Col md={4} className="justify-content-center align-items-center d-flex">
                     <div className="d-flex flex-column align-items-center">
-                        <p className="text-competences roboto-400">Languages Secondaires</p>
+                        <p className="text-competences roboto-400 title-color">Languages Secondaires</p>
                         <div className="d-flex justify-content-center">
                             <Image src={C} className="image-competences"/>
                             <Image src={Java} className="image-competences"/>
