@@ -19,6 +19,7 @@ function App() {
           <Competences/>
           <Project/>
           <Footer/>
+
       </>
   )
 }
