@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
-import {Button, Col, Modal} from "react-bootstrap";
+import {Badge, Button, Col, Modal} from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Portal from "./assets/Img/Portal.jpg";
 import UCave from "./assets/Img/UCave.png";
 import GetOut from "./assets/Img/GetOut.png";
 import StoneEngine from "./assets/Img/StoneEngine.png";
 import CiteDesPixels from "./assets/Img/Cite_Des_Pixels.png";
+import StarCluster from "./assets/Img/StarCluster.png";
 import React from "react";
 
 function UCaveModal(props) {
@@ -196,12 +197,109 @@ function CDPModal(props) {
     );
 }
 
+function StarClusterModal(props) {
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter" className="text-white">
+                    Star Cluster (Projet de fin d’année)
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className="text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/r7vRVnPHQjg?si=CXIa8nu5HWK2mzYI"
+                            title="YouTube video player" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                <p className="text-white modal-text">
+                    Ce projet de fin d’année a été réalisé en équipe sur Unity.
+                    Il s’agissait de créer un jeu mobile narratif en vue top-down, mêlant exploration et ambiance poétique.
+                    L’objectif du joueur est de parcourir un monde éclaté pour en réparer les fragments et restaurer l’équilibre de l’univers.<br/><br/>
 
-function ProjectCard({ title, image, description, onClick }) {
+                    Le gameplay repose sur l’exploration libre, la collecte d’objets-clés et des interactions scénarisées avec des éléments du décor.
+                    L’histoire est racontée de manière environnementale, avec des effets visuels et sonores renforçant l’immersion et la narration.<br/><br/>
+
+                    J’ai occupé le rôle de lead tech sur ce projet, une première pour moi.
+                    J’ai coordonné le développement, structuré l’architecture du code, et aidé les membres de l’équipe à progresser techniquement.
+                    Cette expérience m’a appris à prendre des décisions techniques globales tout en gardant une bonne dynamique de groupe.<br/><br/>
+
+                    Moteur: Unity<br/>
+                    Durée: 1 mois
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+    );
+}
+
+function PortalModal(props) {
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter" className="text-white">
+                    Star Cluster (Projet de fin d’année)
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className="text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SPqimDlyaas?si=a991C1xouLE1SrNE"
+                            title="YouTube video player" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen>
+                    </iframe>
+                </div>
+                <p className="text-white modal-text">
+                    Ce projet scolaire avait pour objectif de nous initier à Unreal Engine 5 à travers la création d’un prototype de jeu en Blueprints.
+                    En équipe, nous avons choisi de reconstituer le gameplay de Portal, célèbre pour ses mécaniques de téléportation et ses énigmes spatiales.<br/><br/>
+
+                    Le joueur dispose d’un pistolet à portails permettant de créer deux points de passage instantanés entre différentes zones.
+                    Nous avons reproduit les mécaniques de tir, de traversée des portails, et certaines énigmes basées sur la physique, le tout sans écrire une seule ligne de code, uniquement avec le système visuel de Blueprint.<br/><br/>
+
+                    Ce projet m’a permis de découvrir les fondamentaux d’Unreal Engine, de comprendre la logique de Blueprint et de manipuler la physique du moteur.
+                    C’était une excellente première approche pour appréhender les possibilités de l’engine et poser des bases solides pour de futurs projets plus complexes.<br/><br/>
+
+                    Moteur: Unreal<br/>
+                    Durée: 1 semaine
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide}>Close</Button>
+            </Modal.Footer>
+        </Modal>
+    );
+}
+
+
+function ProjectCard({ title, image, description, onClick, tags = [] }) {
     return (
         <div className="card-custom" onClick={onClick}>
             <div className="info-project">
-                <h3 className="title-project">{title}</h3>
+                <div className="title-project">
+                    <h3>{title}</h3>
+                    <div>
+                        {tags.map((tag, idx) => (
+                            <Badge className="tag-project" key={idx}>
+                                <span className="tag-project-text">{tag}</span>
+                            </Badge>
+                        ))}
+                    </div>
+                </div>
                 {image && <Image src={image} rounded className="image-project" />}
                 <p className="title-color">{description}</p>
             </div>
@@ -214,6 +312,8 @@ function Project() {
     const [uCaveModalShow, setUCaveModalShow] = React.useState(false);
     const [stoneEngineModalShow, setStoneEngineModalShow] = React.useState(false);
     const [cDPModalShow, setCDPModalShow] = React.useState(false);
+    const [starClusterModalShow, setStarClusterModalShow] = React.useState(false);
+    const [portalModalShow, setPortalModalShow] = React.useState(false);
 
   return (
     <>
@@ -234,6 +334,14 @@ function Project() {
             show={cDPModalShow}
             onHide={() => setCDPModalShow(false)}
         />
+        <StarClusterModal
+            show={starClusterModalShow}
+            onHide={() => setStarClusterModalShow(false)}
+        />
+        <PortalModal
+            show={portalModalShow}
+            onHide={() => setPortalModalShow(false)}
+        />
 
         <div id="projet" className="d-flex justify-content-center align-items-center flex-column padding-part">
             <p className="roboto-400 title-competences title-color">Projet</p>
@@ -249,6 +357,7 @@ function Project() {
                         image={UCave}
                         description="Un jeu d’exploration en 2D créé en 48h, où vous devez vous enfoncer toujours plus profondément dans une grotte pour en ressortir."
                         onClick={() => setUCaveModalShow(true)}
+                        tags={["Unity", "C#", "Game Jam"]}
                     />
                     <p className="date-timeline">2022</p>
                     <p className="date-timeline">2022</p>
@@ -257,6 +366,7 @@ function Project() {
                         image={GetOut}
                         description="Un jeu d’horreur en 3D développé en 72h, où vous explorez un hôpital psychiatrique désert, hanté par des phénomènes étranges."
                         onClick={() => setGetOutModalShow(true)}
+                        tags={["Unity", "C#", "Game Jam"]}
                     />
                     <p className="date-timeline">2024</p>
                     <p className="date-timeline">2024</p>
@@ -265,29 +375,31 @@ function Project() {
                         image={StoneEngine}
                         description="Un moteur de jeu développé en 3 semaines avec DirectX 12, pour comprendre les fondations techniques des engines avant d’en utiliser."
                         onClick={() => setStoneEngineModalShow(true)}
+                        tags={["C++", "DirectX12"]}
                     />
                     <ProjectCard
                         title="Cité des Pixels (Caritatif)"
                         image={CiteDesPixels}
                         description="Un événement caritatif Minecraft pour l’UNICEF, où j’ai développé les mini-jeux et participé à l’organisation sur place."
                         onClick={() => setCDPModalShow(true)}
+                        tags={["Java", "Minecraft", "Caritatif"]}
                     />
-                    <div className="card-custom">
-                        <div className="info-project">
-                            <h3 className="title-project">Title 4</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                        </div>
-                    </div>
-                    <div className="card-custom">
-                        <div className="info-project">
-                            <h3 className="title-project">Title 5</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                        </div>
-                    </div>
+                    <p className="date-timeline">2025</p>
+                    <p className="date-timeline">2025</p>
+                    <ProjectCard
+                        title="Portal (Unreal Engine 5)"
+                        image={Portal}
+                        description="Une reconstitution du jeu Portal sur Unreal Engine en Blueprints, pour découvrir le moteur et ses mécaniques visuelles."
+                        onClick={() => setPortalModalShow(true)}
+                        tags={["Unreal", "Blueprint"]}
+                    />
+                    <ProjectCard
+                        title="Star Cluster (Projet de fin d’année)"
+                        image={StarCluster}
+                        description="Un jeu mobile narratif en vue top-down, où le joueur explore un monde fragmenté pour réparer l’univers."
+                        onClick={() => setStarClusterModalShow(true)}
+                        tags={["Unity", "Mobile"]}
+                    />
                 </div>
             </div>
         </Col>

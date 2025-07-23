@@ -166,6 +166,8 @@ body {
 .title-project {
     color: var(--secondary-color);
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Timeline dot  */
@@ -181,7 +183,12 @@ body {
 
 /* text right if the card is even  */
 .card-custom:nth-child(even) > .info-project > .title-project {
-    text-align: right;
+    flex-direction:  row-reverse;
+}
+
+/* text right if the card is even  */
+.card-custom:nth-child(odd) > .info-project > .title-project {
+    flex-direction: row;
 }
 
 /* setting dot to the left if the card is odd */
@@ -192,6 +199,19 @@ body {
 /* setting dot to the right if the card is odd */
 .card-custom:nth-child(even) > .info-project > .title-project::before {
     right: -45px;
+}
+
+.tag-project{
+    margin-left: 7px;
+    margin-right: 7px;
+    height: 30px;
+    font-size: 5em;
+    background-color: var(--secondary-color) !important;
+}
+
+.tag-project-text{
+    font-size: 1.5em;
+    font-weight: 500;
 }
 
 .image-project{
