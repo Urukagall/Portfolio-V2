@@ -8,6 +8,7 @@ import GetOut from "./assets/Img/GetOut.png";
 import StoneEngine from "./assets/Img/StoneEngine.png";
 import CiteDesPixels from "./assets/Img/Cite_Des_Pixels.png";
 import StarCluster from "./assets/Img/StarCluster.png";
+import CommingSoon from "./assets/Img/CommingSoon.png";
 import React from "react";
 
 function UCaveModal(props) {
@@ -399,6 +400,11 @@ function Project() {
                         description="Un jeu mobile narratif en vue top-down, où le joueur explore un monde fragmenté pour réparer l’univers."
                         onClick={() => setStarClusterModalShow(true)}
                         tags={["Unity", "Mobile"]}
+                    />
+                    <ProjectCard
+                        title="Stage (2025)"
+                        image={CommingSoon}
+                        description="Comming soon"
                     />
                 </div>
             </div>
