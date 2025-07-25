@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import HomeScreenVideo from "./assets/Video/test.mp4";
+import HomeScreenVideo from "./assets/Video/AllGameplayVideo.mp4";
 
 function HomePage() {
 
